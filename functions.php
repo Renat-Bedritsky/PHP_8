@@ -42,14 +42,14 @@ function showProducts() {
             <h3>'. $product['title'] .'</h3>
             <div class="product_price">$'.$product['price'].'</div>
         </div>';
-        addProduct($product['title'], $product['image'], $product['price']);
+        addProduct($product['id'], $product['title'], $product['image'], $product['price']);
     }
     if (!empty($html)) echo '<div class="products_list">'.$html.'</div>';
 }
 
 showProducts();
 
-function addProduct($title, $image, $price) {
+function addProduct($id, $title, $image, $price) {
     if (isset($_GET['name'])) { 
         if ($_GET['name'] == $title) { ?>
 
@@ -68,19 +68,19 @@ function addProduct($title, $image, $price) {
 
             <?php 
             if (isset($_POST['addBasket'])) {
-                $i = 1;
-                $position = "position_$i";
-                foreach ($_COOKIE as $key => $value) {
-                    if ($position == $key) {
-                        $i++;
-                        // $position = "position_$i";
-                    }
-                }
-                // else setcookie("$position", "$title", time()+1800);
+                //$i = 1;
+                $position = "position_$id";
+                // foreach ($_COOKIE as $key => $value) {
+                //     if ($position == $key) {
+                //         $i++;
+                //         $position = "position_$i";
+                //     }
+                // }
+                setcookie("$position", "$title", time()+1800);
             }
         }
     }
 }
 echo '<pre>';
 var_dump($_COOKIE);
-echo '/<pre>';
+echo '</pre>';
