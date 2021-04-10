@@ -1,0 +1,7 @@
+RewriteEngine On
+RewriteBase /
+
+RewriteCond %{REQUEST_FILENAME} !/index.php
+# RewriteCond %{REQUEST_FILENAME} !/index.php/(a-zA-z0-9_-.)?
+RewriteCond %{REQUEST_FILENAME} !/(\/[a-zA-Z0-9_])+.png$
+RewriteRule .+ 404.php
