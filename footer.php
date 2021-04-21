@@ -4,7 +4,7 @@
 
 <footer class="footer">
 
-    <img src="img/logo_footer.png" alt="logo">
+    <img src="/img/logo_footer.png" alt="logo">
 
     <ul>
         <li>59 Street, Newyork City, Rose Town, 05 Rive House</li>
